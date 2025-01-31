@@ -1,30 +1,19 @@
-# calculate.py
 import sys
 import math
 
-# Get the values ​​of a, b and c
-a = sys.argv[1]
-b = sys.argv[2]
-c = sys.argv[3]
+# Obtener los argumentos de la línea de comandos
+if len(sys.argv) != 4:
+    print("Error: 3 arguments are required.")
+    sys.exit(1)
 
-# Function to check if a value is numeric
-def is_numeric(value):
-    try:
-        float(value)
-        return True
-    except ValueError:
-        return False
+try:
+    a = float(sys.argv[1])
+    b = float(sys.argv[2])
+    c = float(sys.argv[3])
+except ValueError:
+    print("Error: numerical values.")
+    sys.exit(1)
 
-# Check if the values ​​are numeric
-if not all(is_numeric(val) for val in [a, b, c]):
-    print("Error: All values ​​must be numeric.")
-    sys.exit()
-
-a = float(a)
-b = float(b)
-c = float(c)
-
-# Calculations
 output = []
 
 if a < 1:
@@ -45,7 +34,6 @@ if c >= 0:
         result = math.sqrt(c_cubed) / a
     result += b
     output.append(f"The final result is: {result}")
-    
 
 # Print output in HTML format
 print("".join(output))
