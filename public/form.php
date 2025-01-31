@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Enter the values</h1>
-    <form action="process.php" method="post">
+    <form action="process.php" method="POST">
         <label for="a">Value of a:</label>
         <input type="number" name="a" id="a" required><br><br>
 
